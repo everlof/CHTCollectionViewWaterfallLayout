@@ -71,6 +71,21 @@ extern NSString *const CHTCollectionElementKindSectionFooter;
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnCountForSection:(NSInteger)section;
 
 /**
+ *  Asks the delegate for extra height for a particular item (in actual pixels).
+ *
+ *  @param collectionView
+ *    The collection view object displaying the waterfall layout.
+ *  @param collectionViewLayout
+ *    The layout object requesting the information.
+ *  @param indexPath
+ *    The indexPath of the object we ask for extra height.
+ *
+ *  @return
+ *    The original column count for that section. Must be greater than 0.
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout extraHeightFor:(NSIndexPath *)indexPath;
+
+/**
  *  Asks the delegate for the height of the header view in the specified section.
  *
  *  @param collectionView
